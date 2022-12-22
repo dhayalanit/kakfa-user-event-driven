@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost:3306/productdb
+    username: root
+    password:
+  kafka:
+    bootstrap-servers:
+      - localhost:50002
+    template:
+      default-topic: user-service-event
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.LongSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
